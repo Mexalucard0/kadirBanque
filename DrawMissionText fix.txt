@@ -1,0 +1,8 @@
+va dans ton es_extended > client > functions et tu mais ça :
+
+ESX.DrawMissionText = function(msg, time)
+    ClearPrints()
+    BeginTextCommandPrint('STRING')
+    AddTextComponentSubstringPlayerName(msg)
+    EndTextCommandPrint(time, true)
+end
