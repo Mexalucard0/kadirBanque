@@ -87,7 +87,7 @@ Citizen.CreateThread(function()
             ESX.ShowHelpNotification("Appuyez sur ~INPUT_CONTEXT~ pour parler avec ~o~le banquier !")
             if IsControlJustReleased(1, 51) then
                 DisplayHelpTextThisFrame(GetCurrentResourceName(), false)
-                TriggerServerEvent('bank:menucentral')
+                TriggerServerEvent('bank:openverif')
             end
         end
             
@@ -97,8 +97,8 @@ end)
 
 -- On ouvre le menu
 
-RegisterNetEvent("menucentral")
-AddEventHandler("menucentral", function()
+RegisterNetEvent("openmenu")
+AddEventHandler("openmenu", function()
     FreezeEntityPosition(GetPlayerPed(-1), true)
     ESX.DrawMissionText('[~b~Vous~s~] Bonjour monsieur , on ma dis que c\'étais ici pour je prend ma carte banquaire', 2500)
     Citizen.Wait(3000)
