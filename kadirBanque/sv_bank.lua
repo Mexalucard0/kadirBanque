@@ -60,7 +60,6 @@ AddEventHandler('bank:carte', function()
  
      local price = 15
      local item = 'carte'
-     local carte = xPlayer.getInventoryItem(item).count
   
      if xPlayer.getMoney() >= price then
           TriggerClientEvent('esx:showNotification', source, "~o~Transaction~s~ :\npaiement ~g~accepté~s~\nvous avez payer ~g~".. price .."$") 
@@ -89,15 +88,15 @@ end
 end)
 
 
-RegisterNetEvent('bank:menucentral')
-AddEventHandler('bank:menucentral', function()
+RegisterNetEvent('bank:openverif')
+AddEventHandler('bank:openverif', function()
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
 
     local carte = xPlayer.getInventoryItem('carte').count
 
     if carte  <=0 then
-     TriggerClientEvent('menucentral', source)
+     TriggerClientEvent('openmenu', source)
     else
      TriggerClientEvent('esx:showNotification', source, '~r~ERREUR:\n~s~Tu as déjà une carte banquaire !!')
      end
